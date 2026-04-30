@@ -66,7 +66,7 @@ export default function InvitationPage() {
 
             <div className="relative aspect-[3/4] overflow-hidden rounded-[1.4rem] shadow-xl shadow-primary/20">
               <Image
-                src="/melissa-portrait.png"
+                src="/mis-15-invitacion/melissa-portrait.png"
                 alt="Vestido de XV años color lila"
                 fill
                 priority
