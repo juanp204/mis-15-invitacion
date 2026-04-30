@@ -66,7 +66,7 @@ export default function InvitationPage() {
 
             <div className="relative aspect-[3/4] overflow-hidden rounded-[1.4rem] shadow-xl shadow-primary/20">
               <Image
-                src="/mis-15-invitacion/vestido-de-15-anos-lila-1-300x300.jpg"
+                src="https://cdn.mechitacollection.com/wp-content/uploads/2024/06/11162528/vestido-de-15-anos-lila-1.jpg"
                 alt="Vestido de XV años color lila"
                 fill
                 priority
