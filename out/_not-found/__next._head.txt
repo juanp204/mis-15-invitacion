@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[40599,["/_next/static/chunks/17_b-o1cfmrhx.js","/_next/static/chunks/0ri8i~ri~8wh3.js"],"ViewportBoundary"]
+3:I[40599,["/_next/static/chunks/17_b-o1cfmrhx.js","/_next/static/chunks/0ri8i~ri~8wh3.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Mis XV Años — Melissa"}],["$","meta","1",{"name":"description","content":"Te invito a celebrar conmigo una noche inolvidable. Mis XV Años — 14 de Junio, Hacienda La Esperanza."}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"S9rdFYfh6g1NSMOMBGy3B"}
