@@ -23,9 +23,10 @@ const greatVibes = Great_Vibes({
 })
 
 export const metadata: Metadata = {
-  title: "Mis XV Años — Melissa",
+  title: "Mis XV Años — Melany",
   description:
-    "Te invito a celebrar conmigo una noche inolvidable. Mis XV Años — 14 de Junio, Hacienda La Esperanza.",
+    "Te invito a celebrar conmigo una noche inolvidable. Mis XV Años — Viernes 12 de Junio, Hacienda La Esperanza.",
+  generator: "v0.app",
 }
 
 export default function RootLayout({
