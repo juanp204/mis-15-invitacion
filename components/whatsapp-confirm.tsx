@@ -40,8 +40,8 @@ export function WhatsappConfirm({ phone, hostName, guest }: Props) {
             </p>
           </div>
 
-          {/* Cupos stepper for families/groups */}
-          {guest.slots > 1 && (
+          {/* Cupos stepper for families/groups or notice for individual guests */}
+          {guest.slots > 1 ? (
             <div className="flex flex-col items-center gap-3 rounded-xl border border-primary/20 bg-card/70 px-6 py-5">
               <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
                 ¿Cuántos asistirán?
@@ -79,6 +79,15 @@ export function WhatsappConfirm({ phone, hostName, guest }: Props) {
 
               <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground/80">
                 de {guest.slots} cupos reservados
+              </p>
+            </div>
+          ) : (
+            <div className="flex flex-col items-center gap-1.5 rounded-xl border border-primary/20 bg-card/70 px-6 py-4 text-center">
+              <p className="text-xs uppercase tracking-[0.3em] text-primary font-medium">
+                1 Cupo Reservado
+              </p>
+              <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground font-medium">
+                Pase personal e intransferible
               </p>
             </div>
           )}
@@ -137,9 +146,9 @@ export function WhatsappConfirm({ phone, hostName, guest }: Props) {
 // ── Generic message (no guest identified) ─────────────────────────────
 function buildGenericMessage(guestName: string, hostName: string): string {
   return [
-    `Hola ${hostName}! 💌 Soy ${guestName}.`,
+    `Hola ${hostName}! \u{1F48C} Soy ${guestName}.`,
     `Con muchísima alegría confirmo mi asistencia a tu fiesta de XV Años.`,
-    `Gracias por incluirme en una noche tan especial. ¡No me la pierdo por nada del mundo! 🍸✨`,
+    `Gracias por incluirme en una noche tan especial. ¡No me la pierdo por nada del mundo! \u{1F378}\u{2728}`,
   ].join(" ")
 }
 
@@ -150,11 +159,11 @@ function buildPersonalizedMessage(guest: GuestInfo, count?: number): string {
   if (!isPlural) {
     const pronoun = guest.type === "f" ? "la" : "lo"
     return [
-      `¡Hola Melany! 💌✨`,
+      `¡Hola Melany! \u{1F48C}\u{2728}`,
       "",
       `Soy *${guest.name}* y con muchísima alegría confirmo mi asistencia a tu fiesta de XV Años.`,
       "",
-      `¡Cuenta conmigo, no me ${pronoun} pierdo por nada del mundo! 🍸✨`,
+      `¡Cuenta conmigo, no me ${pronoun} pierdo por nada del mundo! \u{1F378}\u{2728}`,
     ].join("\n")
   }
 
@@ -162,8 +171,8 @@ function buildPersonalizedMessage(guest: GuestInfo, count?: number): string {
     guest.type === "family" ? "la" : guest.type === "brothers" ? "los" : "las"
   const closing =
     guest.type === "sisters"
-      ? `¡Cuenta con nosotras, no nos lo perdemos por nada del mundo! 🍸✨`
-      : `¡Cuenta con nosotros, no nos lo perdemos por nada del mundo! 🍸✨`
+      ? `¡Cuenta con nosotras, no nos lo perdemos por nada del mundo! \u{1F378}\u{2728}`
+      : `¡Cuenta con nosotros, no nos lo perdemos por nada del mundo! \u{1F378}\u{2728}`
 
   const countLine =
     count != null
@@ -171,7 +180,7 @@ function buildPersonalizedMessage(guest: GuestInfo, count?: number): string {
       : `Asistiremos *${guest.slots}* personas.`
 
   return [
-    `¡Hola Melany! 💌✨`,
+    `¡Hola Melany! \u{1F48C}\u{2728}`,
     "",
     `Somos ${article} *${guest.name}* y con muchísima alegría confirmamos nuestra asistencia a tu fiesta de XV Años.`,
     countLine,

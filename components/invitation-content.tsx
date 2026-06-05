@@ -276,42 +276,50 @@ export function InvitationContent({ guest }: Props) {
 
           <FloralDivider className="my-8" />
 
-          {/* Muestras de color */}
-          <div className="flex items-center justify-center gap-6 sm:gap-10">
+          {/* Muestras de color y tipo de vestimenta */}
+          <div className="flex items-center justify-center gap-8 sm:gap-12">
+            {/* Izquierda: Lila Reservado */}
             <div className="flex flex-col items-center">
               <div
-                className="h-16 w-16 rounded-full border border-primary/40 shadow-md shadow-primary/20 sm:h-20 sm:w-20"
+                className="h-16 w-16 rounded-full border border-primary/40 shadow-lg shadow-primary/20 sm:h-20 sm:w-20"
                 style={{ backgroundColor: "oklch(0.72 0.13 305)" }}
                 aria-label="Color lila reservado"
               />
               <div className="mt-3 flex items-center gap-1 text-xs uppercase tracking-[0.25em] text-primary">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3.5 w-3.5">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-3.5 w-3.5">
                   <line x1="5" y1="5" x2="19" y2="19" />
                   <line x1="19" y1="5" x2="5" y2="19" />
                 </svg>
                 <span>Lila</span>
               </div>
-              <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Reservado</p>
+              <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-semibold">Reservado</p>
             </div>
 
-            <div className="hidden h-12 w-px bg-primary/20 sm:block" aria-hidden="true" />
+            {/* Separador vertical */}
+            <div className="h-16 w-px bg-primary/25" aria-hidden="true" />
 
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              {[
-                { name: "Negro", color: "oklch(0.18 0 0)" },
-                { name: "Azul", color: "oklch(0.40 0.12 250)" },
-                { name: "Rosa", color: "oklch(0.78 0.10 15)" },
-                { name: "Verde", color: "oklch(0.55 0.10 145)" },
-                { name: "Dorado", color: "oklch(0.78 0.10 85)" },
-              ].map((c) => (
-                <div
-                  key={c.name}
-                  title={c.name}
-                  className="h-9 w-9 rounded-full border border-primary/20 shadow-sm sm:h-11 sm:w-11"
-                  style={{ backgroundColor: c.color }}
-                  aria-label={c.name}
-                />
-              ))}
+            {/* Derecha: Traje Formal */}
+            <div className="flex flex-col items-center">
+              <div
+                className="flex h-16 w-16 items-center justify-center rounded-full border border-primary/30 bg-primary/5 shadow-lg shadow-primary/10 sm:h-20 sm:w-20"
+                aria-label="Vestimenta Formal"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  className="h-9 w-9 text-primary sm:h-11 sm:w-11"
+                  aria-hidden="true"
+                >
+                  <path d="M10 4a2 2 0 1 1 4 0c0 1.5-1 2-1 2H11s-1-.5-1-2z" />
+                  <path d="M2 13c0-1.65 1.35-3 3-3h14a3 3 0 1 1 0 6H5a3 3 0 0 1-3-3Z" />
+                </svg>
+              </div>
+              <div className="mt-3 flex items-center justify-center text-xs uppercase tracking-[0.25em] text-primary">
+                <span>Formal</span>
+              </div>
+              <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-semibold">Traje / Vestido</p>
             </div>
           </div>
 
