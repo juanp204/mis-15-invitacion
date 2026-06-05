@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       images: [
         {
-          url: "https://juanp204.github.io/mis-15-invitacion/og-preview.jpg",
+          url: "/og-preview.jpg",
           alt: `Invitación de XV Años para ${guest.name}`,
         },
       ],
