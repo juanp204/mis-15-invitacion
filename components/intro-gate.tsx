@@ -100,7 +100,7 @@ export function IntroGate({ children, guestName, introVerb, inviteLabel }: Intro
           <div className="relative flex flex-col items-center px-6">
 
             {/* Pre-title text */}
-            <p className={`mb-3 font-display text-[0.62rem] tracking-[0.55em] uppercase text-white sm:text-[0.72rem] transition-opacity duration-500 text-balance drop-shadow-[0_2px_6px_rgba(40,10,70,0.7)] ${stage === "sealed" ? "opacity-100" : "opacity-0"}`}>
+            <p className={`text-center mb-3 font-display text-[0.7rem] sm:text-[0.8rem] font-bold tracking-[0.35em] uppercase text-white transition-opacity duration-500 text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] ${stage === "sealed" ? "opacity-100" : "opacity-0"}`}>
               {guestName
                 ? <>{guestName}, {introVerb || "tienes"} una invitación especial</>
                 : "Tienes una invitación especial"

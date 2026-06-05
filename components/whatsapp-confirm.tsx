@@ -156,9 +156,9 @@ export function WhatsappConfirm({ phone, hostName, guest }: Props) {
 // ── Generic message (no guest identified) ─────────────────────────────
 function buildGenericMessage(guestName: string, hostName: string): string {
   return [
-    `Hola ${hostName}! \u{1F48C} Soy ${guestName}.`,
+    `Hola ${hostName}! Soy ${guestName}.`,
     `Con muchísima alegría confirmo mi asistencia a tu fiesta de XV Años.`,
-    `Gracias por incluirme en una noche tan especial. ¡No me la pierdo por nada del mundo! \u{1F378}\u{2728}`,
+    `Gracias por incluirme en una noche tan especial. ¡No me la pierdo por nada del mundo!`,
   ].join(" ")
 }
 
@@ -169,11 +169,11 @@ function buildPersonalizedMessage(guest: GuestInfo, count?: number): string {
   if (!isPlural) {
     const pronoun = guest.type === "f" ? "la" : "lo"
     return [
-      `¡Hola Melany! \u{1F48C}\u{2728}`,
+      `¡Hola Melany!`,
       "",
       `Soy *${guest.name}* y con muchísima alegría confirmo mi asistencia a tu fiesta de XV Años.`,
       "",
-      `¡Cuenta conmigo, no me ${pronoun} pierdo por nada del mundo! \u{1F378}\u{2728}`,
+      `¡Cuenta conmigo, no me ${pronoun} pierdo por nada del mundo!`,
     ].join("\n")
   }
 
@@ -181,8 +181,8 @@ function buildPersonalizedMessage(guest: GuestInfo, count?: number): string {
     guest.type === "family" ? "la" : guest.type === "brothers" ? "los" : "las"
   const closing =
     guest.type === "sisters"
-      ? `¡Cuenta con nosotras, no nos lo perdemos por nada del mundo! \u{1F378}\u{2728}`
-      : `¡Cuenta con nosotros, no nos lo perdemos por nada del mundo! \u{1F378}\u{2728}`
+      ? `¡Cuenta con nosotras, no nos lo perdemos por nada del mundo!`
+      : `¡Cuenta con nosotros, no nos lo perdemos por nada del mundo!`
 
   const countLine =
     count != null
@@ -190,7 +190,7 @@ function buildPersonalizedMessage(guest: GuestInfo, count?: number): string {
       : `Asistiremos *${guest.slots}* personas.`
 
   return [
-    `¡Hola Melany! \u{1F48C}\u{2728}`,
+    `¡Hola Melany!`,
     "",
     `Somos ${article} *${guest.name}* y con muchísima alegría confirmamos nuestra asistencia a tu fiesta de XV Años.`,
     countLine,
