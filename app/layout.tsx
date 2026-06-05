@@ -33,7 +33,7 @@ export const metadata: Metadata = {
       "Te invito a celebrar conmigo una noche inolvidable. Mis XV Años — Domingo 14 de Junio, Discoteca 8cero4.",
     images: [
       {
-        url: "https://juanp204.github.io/mis-15-invitacion/og-preview.webp",
+        url: "https://juanp204.github.io/mis-15-invitacion/og-preview.jpg",
         alt: "Invitación de XV Años de Melany",
       },
     ],
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Mis XV Años — Melany",
     description:
       "Te invito a celebrar conmigo una noche inolvidable. Mis XV Años — Domingo 14 de Junio, Discoteca 8cero4.",
-    images: ["https://juanp204.github.io/mis-15-invitacion/og-preview.webp"],
+    images: ["https://juanp204.github.io/mis-15-invitacion/og-preview.jpg"],
   },
 }
 
