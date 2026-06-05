@@ -23,7 +23,7 @@ const greatVibes = Great_Vibes({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://15añosmelany.site"),
+  metadataBase: new URL("https://xn--15aosmelany-3db.site"),
   title: "Mis XV Años — Melany",
   description:
     "Te invito a celebrar conmigo una noche inolvidable. Mis XV Años — Domingo 14 de Junio, Discoteca 8cero4.",
