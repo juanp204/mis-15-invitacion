@@ -115,6 +115,7 @@ export const GUESTS: Guest[] = [
   { name: "Salomé Álvarez", slug: "salome-alvarez", slots: 1, type: "f" },
   { name: "Shaidy Sierra", slug: "shaidy-sierra", slots: 1, type: "f" },
   { name: "Nazyra del Prado", slug: "nazyra-del-prado", slots: 1, type: "f" },
+  { name: "Lismary Romero", slug: "lismary-romero", slots: 1, type: "f" },
 
   // ── Invitados (1 cupo) ──
   { name: "Arnold Osorio", slug: "arnold-osorio", slots: 1, type: "m" },
