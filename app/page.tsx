@@ -71,7 +71,7 @@ export default function InvitationPage() {
             <div className="absolute -inset-3 rounded-[2rem] border border-primary/30" aria-hidden="true" />
             <div className="absolute -inset-1 rounded-[1.6rem] border border-accent/40" aria-hidden="true" />
 
-            <div className="relative aspect-[2/3] overflow-hidden rounded-[1.4rem] shadow-xl shadow-primary/20">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-[1.4rem] shadow-xl shadow-primary/20">
               <Image
                 src={MAIN_PHOTO_SRC}
                 alt="Vestido de XV años color lila"

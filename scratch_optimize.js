@@ -9,9 +9,10 @@ async function optimize() {
   try {
     console.log('Optimizing images...');
     
-    // 1. Web main photo: WebP format, original size 2016x3024, quality 60
+    // 1. Web main photo: WebP format, width 800px, quality 80
     const info1 = await sharp(inputPath)
-      .webp({ quality: 60 })
+      .resize({ width: 800 })
+      .webp({ quality: 80 })
       .toFile(webOutputPath);
     console.log(`Created web hero: public/hero-optimized.webp (${(info1.size / 1024).toFixed(2)} KB)`);
 
