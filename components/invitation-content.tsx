@@ -285,14 +285,14 @@ export function InvitationContent({ guest }: Props) {
                 style={{ backgroundColor: "oklch(0.72 0.13 305)" }}
                 aria-label="Color lila reservado"
               />
-              <div className="mt-3 flex items-center gap-1 text-xs uppercase tracking-[0.25em] text-primary">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-3.5 w-3.5">
+              <div className="mt-3 flex items-center gap-1.5 text-sm sm:text-base uppercase tracking-[0.25em] text-primary font-bold">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="h-4 w-4">
                   <line x1="5" y1="5" x2="19" y2="19" />
                   <line x1="19" y1="5" x2="5" y2="19" />
                 </svg>
                 <span>Lila</span>
               </div>
-              <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-semibold">Reservado</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.2em] text-destructive font-bold">Reservado</p>
             </div>
 
             {/* Separador vertical */}
@@ -308,18 +308,17 @@ export function InvitationContent({ guest }: Props) {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.5"
+                  strokeWidth="1.8"
                   className="h-9 w-9 text-primary sm:h-11 sm:w-11"
                   aria-hidden="true"
                 >
-                  <path d="M10 4a2 2 0 1 1 4 0c0 1.5-1 2-1 2H11s-1-.5-1-2z" />
-                  <path d="M2 13c0-1.65 1.35-3 3-3h14a3 3 0 1 1 0 6H5a3 3 0 0 1-3-3Z" />
+                  <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" />
                 </svg>
               </div>
-              <div className="mt-3 flex items-center justify-center text-xs uppercase tracking-[0.25em] text-primary">
+              <div className="mt-3 flex items-center justify-center text-sm sm:text-base uppercase tracking-[0.25em] text-primary font-bold">
                 <span>Formal</span>
               </div>
-              <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-semibold">Traje / Vestido</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground font-bold">Traje / Vestido</p>
             </div>
           </div>
 

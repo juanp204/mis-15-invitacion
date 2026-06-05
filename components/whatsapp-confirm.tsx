@@ -82,12 +82,22 @@ export function WhatsappConfirm({ phone, hostName, guest }: Props) {
               </p>
             </div>
           ) : (
-            <div className="flex flex-col items-center gap-1.5 rounded-xl border border-primary/20 bg-card/70 px-6 py-4 text-center">
-              <p className="text-xs uppercase tracking-[0.3em] text-primary font-medium">
-                1 Cupo Reservado
+            <div className="flex flex-col items-center gap-3 rounded-xl border border-primary/20 bg-card/70 px-6 py-5 text-center">
+              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-bold">
+                Tus cupos disponibles
               </p>
-              <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground font-medium">
-                Pase personal e intransferible
+              
+              <div className="flex items-center justify-center">
+                <span className="font-display text-4xl text-primary font-bold">
+                  1
+                </span>
+              </div>
+
+              <p className="text-sm uppercase tracking-[0.15em] text-foreground font-bold">
+                Cupo Personal Reservado
+              </p>
+              <p className="text-[11px] uppercase tracking-[0.1em] text-muted-foreground/80 font-semibold">
+                (Pase individual, sin acompañantes)
               </p>
             </div>
           )}
