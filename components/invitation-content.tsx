@@ -54,10 +54,10 @@ export function InvitationContent({ guest }: Props) {
         <FallingPetals count={10} />
 
         {/* Esquinas florales (las 4) */}
-        <LilacCorner position="tl" className="h-32 w-32 sm:h-44 sm:w-44" />
-        <LilacCorner position="tr" className="h-32 w-32 sm:h-44 sm:w-44" />
-        <LilacCorner position="bl" className="h-32 w-32 sm:h-40 sm:w-40" />
-        <LilacCorner position="br" className="h-32 w-32 sm:h-40 sm:w-40" />
+        <LilacCorner position="tl" className="h-38 w-38 sm:h-50 sm:w-50" />
+        <LilacCorner position="tr" className="h-38 w-38 sm:h-50 sm:w-50" />
+        <LilacCorner position="bl" className="h-40 w-40 sm:h-52 sm:w-52" />
+        <LilacCorner position="br" className="h-40 w-40 sm:h-52 sm:w-52" />
 
         {/* Mariposas decorativas */}
         <Butterfly className="pointer-events-none absolute left-[12%] top-[30%] h-8 w-10 animate-butterfly opacity-80 sm:h-10 sm:w-12" />
