@@ -134,7 +134,9 @@ export function InvitationContent({ guest }: Props) {
 
             <h2 className="mt-4 text-center font-display text-3xl sm:text-4xl text-foreground text-balance">
               {guest
-                ? <>Para ti, <span className="text-primary">{guest.name}</span>, que eres parte de mi historia</>
+                ? strings?.isPlural
+                  ? <>Para ustedes, <span className="text-primary">{guest.name}</span>, que son parte de mi historia</>
+                  : <>Para ti, <span className="text-primary">{guest.name}</span>, que eres parte de mi historia</>
                 : "Para ti, que eres parte de mi historia"
               }
             </h2>
@@ -150,20 +152,24 @@ export function InvitationContent({ guest }: Props) {
               )}
 
               <p className="first-letter:font-display first-letter:text-5xl first-letter:text-primary first-letter:float-left first-letter:mr-2 first-letter:leading-none">
-                Hoy quiero invitarte a uno de los días más especiales de mi vida: la celebración de mis Quince
-                Años, ese momento en el que dejo atrás la niñez para abrirle la puerta a una nueva etapa llena
-                de sueños, ilusiones y promesas.
+                {strings?.isPlural
+                  ? "Hoy quiero invitarlos a uno de los días más especiales de mi vida: la celebración de mis Quince Años, ese momento en el que dejo atrás la niñez para abrirle la puerta a una nueva etapa llena de sueños, ilusiones y promesas."
+                  : "Hoy quiero invitarte a uno de los días más especiales de mi vida: la celebración de mis Quince Años, ese momento en el que dejo atrás la niñez para abrirle la puerta a una nueva etapa llena de sueños, ilusiones y promesas."
+                }
               </p>
 
               <p>
-                Quiero que este recuerdo sea inolvidable, y por eso no podía imaginarlo sin ti. Tu presencia
-                es el regalo más bonito que podría pedir, porque las personas importantes de mi vida son las
-                que hacen que esta noche tenga sentido.
+                {strings?.isPlural
+                  ? "Quiero que este recuerdo sea inolvidable, y por eso no podía imaginarlo sin ustedes. Su presencia es el regalo más bonito que podría pedir, porque las personas importantes de mi vida son las que hacen que esta noche tenga sentido."
+                  : "Quiero que este recuerdo sea inolvidable, y por eso no podía imaginarlo sin ti. Tu presencia es el regalo más bonito que podría pedir, porque las personas importantes de mi vida son las que hacen que esta noche tenga sentido."
+                }
               </p>
 
               <p>
-                Te espero con el corazón lleno de alegría, lista para bailar, reír y escribir juntos un
-                capítulo que recordaremos para siempre.
+                {strings?.isPlural
+                  ? "Los espero con el corazón lleno de alegría, lista para bailar, reír y escribir juntos un capítulo que recordaremos para siempre."
+                  : "Te espero con el corazón lleno de alegría, lista para bailar, reír y escribir juntos un capítulo que recordaremos para siempre."
+                }
               </p>
 
               <p className="text-right pt-4">

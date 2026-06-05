@@ -26,7 +26,7 @@ export function WhatsappConfirm({ phone, hostName, guest }: Props) {
     ? buildPersonalizedMessage(guest, guest.slots > 1 ? count : undefined)
     : buildGenericMessage(name.trim() || "un invitado especial", hostName)
 
-  const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
+  const href = `https://api.whatsapp.com/send/?phone=${phone}&text=${encodeURIComponent(message)}`
 
   return (
     <div className="w-full max-w-md mx-auto flex flex-col gap-4">
@@ -136,11 +136,11 @@ export function WhatsappConfirm({ phone, hostName, guest }: Props) {
 
 // ── Generic message (no guest identified) ─────────────────────────────
 function buildGenericMessage(guestName: string, hostName: string): string {
-  return (
-    `Hola ${hostName}! 💌 Soy ${guestName}. ` +
-    `Con muchísima alegría confirmo mi asistencia a tu fiesta de XV Años. ` +
-    `Gracias por incluirme en una noche tan especial — ¡no me la pierdo por nada del mundo! 🥂✨`
-  )
+  return [
+    `Hola ${hostName}! 💌 Soy ${guestName}.`,
+    `Con muchísima alegría confirmo mi asistencia a tu fiesta de XV Años.`,
+    `Gracias por incluirme en una noche tan especial. ¡No me la pierdo por nada del mundo! 🍸✨`,
+  ].join(" ")
 }
 
 // ── Personalized message (guest identified by URL) ────────────────────
@@ -148,31 +148,34 @@ function buildPersonalizedMessage(guest: GuestInfo, count?: number): string {
   const isPlural = guest.type === "family" || guest.type === "brothers" || guest.type === "sisters"
 
   if (!isPlural) {
-    const emoji = guest.type === "f" ? "💃" : "🕺"
     const pronoun = guest.type === "f" ? "la" : "lo"
-    return (
-      `¡Hola Melany! 💌✨\n\n` +
-      `Soy *${guest.name}* y con muchísima alegría confirmo mi asistencia a tu fiesta de XV Años.\n\n` +
-      `¡Cuenta conmigo, no me ${pronoun} pierdo por nada del mundo! 🥂${emoji}`
-    )
+    return [
+      `¡Hola Melany! 💌✨`,
+      "",
+      `Soy *${guest.name}* y con muchísima alegría confirmo mi asistencia a tu fiesta de XV Años.`,
+      "",
+      `¡Cuenta conmigo, no me ${pronoun} pierdo por nada del mundo! 🍸✨`,
+    ].join("\n")
   }
 
   const article =
     guest.type === "family" ? "la" : guest.type === "brothers" ? "los" : "las"
   const closing =
     guest.type === "sisters"
-      ? "¡Cuenta con nosotras, no nos lo perdemos por nada del mundo!"
-      : "¡Cuenta con nosotros, no nos lo perdemos por nada del mundo!"
+      ? `¡Cuenta con nosotras, no nos lo perdemos por nada del mundo! 🍸✨`
+      : `¡Cuenta con nosotros, no nos lo perdemos por nada del mundo! 🍸✨`
 
   const countLine =
     count != null
-      ? `Asistiremos *${count}* de ${guest.slots} personas.\n\n`
-      : `Asistiremos *${guest.slots}* personas.\n\n`
+      ? `Asistiremos *${count}* de ${guest.slots} personas.`
+      : `Asistiremos *${guest.slots}* personas.`
 
-  return (
-    `¡Hola Melany! 💌✨\n\n` +
-    `Somos ${article} *${guest.name}* y con muchísima alegría confirmamos nuestra asistencia a tu fiesta de XV Años.\n` +
-    countLine +
-    `${closing} 🥂✨`
-  )
+  return [
+    `¡Hola Melany! 💌✨`,
+    "",
+    `Somos ${article} *${guest.name}* y con muchísima alegría confirmamos nuestra asistencia a tu fiesta de XV Años.`,
+    countLine,
+    "",
+    closing,
+  ].join("\n")
 }
