@@ -54,16 +54,16 @@ export function InvitationContent({ guest }: Props) {
         <FallingPetals count={10} />
 
         {/* Esquinas florales (las 4) */}
-        <LilacCorner position="tl" className="h-44 w-44 sm:h-56 sm:w-56" />
-        <LilacCorner position="tr" className="h-44 w-44 sm:h-56 sm:w-56" />
-        <LilacCorner position="bl" className="h-40 w-40 sm:h-52 sm:w-52" />
-        <LilacCorner position="br" className="h-40 w-40 sm:h-52 sm:w-52" />
+        <LilacCorner position="tl" className="h-32 w-32 sm:h-44 sm:w-44" />
+        <LilacCorner position="tr" className="h-32 w-32 sm:h-44 sm:w-44" />
+        <LilacCorner position="bl" className="h-32 w-32 sm:h-40 sm:w-40" />
+        <LilacCorner position="br" className="h-32 w-32 sm:h-40 sm:w-40" />
 
         {/* Mariposas decorativas */}
         <Butterfly className="pointer-events-none absolute left-[12%] top-[30%] h-8 w-10 animate-butterfly opacity-80 sm:h-10 sm:w-12" />
         <Butterfly className="pointer-events-none absolute right-[14%] top-[55%] h-7 w-9 animate-butterfly opacity-70 sm:h-9 sm:w-11" style={{ animationDelay: "1.5s" }} />
 
-        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 pt-24 pb-20 text-center sm:pt-28">
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 pt-36 pb-20 text-center sm:pt-40">
           <p className="font-display text-xs sm:text-sm tracking-[0.5em] uppercase text-primary/80">
             Mis Quince Años
           </p>
@@ -336,10 +336,10 @@ export function InvitationContent({ guest }: Props) {
 
       {/* ===================== LLUVIA DE SOBRES ===================== */}
       <section className="relative overflow-hidden px-6 py-16 sm:py-24">
-        <LilacCorner position="tl" className="h-32 w-32 sm:h-40 sm:w-40 opacity-80" />
-        <LilacCorner position="tr" className="h-32 w-32 sm:h-40 sm:w-40 opacity-80" />
-        <LilacCorner position="bl" className="h-28 w-28 sm:h-36 sm:w-36 opacity-70" />
-        <LilacCorner position="br" className="h-28 w-28 sm:h-36 sm:w-36 opacity-70" />
+        <LilacCorner position="tl" className="h-24 w-24 sm:h-32 sm:w-32 opacity-80" />
+        <LilacCorner position="tr" className="h-24 w-24 sm:h-32 sm:w-32 opacity-80" />
+        <LilacCorner position="bl" className="h-22 w-22 sm:h-28 sm:w-28 opacity-70" />
+        <LilacCorner position="br" className="h-22 w-22 sm:h-28 sm:w-28 opacity-70" />
 
         <Butterfly className="pointer-events-none absolute left-[10%] top-[30%] h-8 w-10 animate-butterfly opacity-70 sm:h-10 sm:w-12" />
 
@@ -384,10 +384,10 @@ export function InvitationContent({ guest }: Props) {
       <section className="relative overflow-hidden px-6 py-16 sm:py-24 bg-secondary/40">
         <FallingPetals count={6} />
 
-        <LilacCorner position="tl" className="h-36 w-36 sm:h-44 sm:w-44" />
-        <LilacCorner position="tr" className="h-36 w-36 sm:h-44 sm:w-44" />
-        <LilacCorner position="bl" className="h-32 w-32 sm:h-40 sm:w-40 opacity-90" />
-        <LilacCorner position="br" className="h-32 w-32 sm:h-40 sm:w-40 opacity-90" />
+        <LilacCorner position="tl" className="h-24 w-24 sm:h-32 sm:w-32" />
+        <LilacCorner position="tr" className="h-24 w-24 sm:h-32 sm:w-32" />
+        <LilacCorner position="bl" className="h-22 w-22 sm:h-28 sm:w-28 opacity-90" />
+        <LilacCorner position="br" className="h-22 w-22 sm:h-28 sm:w-28 opacity-90" />
 
         <div className="relative mx-auto max-w-2xl text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-primary/80">Comparte el Recuerdo</p>
