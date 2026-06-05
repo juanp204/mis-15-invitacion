@@ -12,9 +12,10 @@ import {
 import { IntroGate } from "@/components/intro-gate"
 
 const HOST_NAME = "Melany"
-const EVENT_DATE_ISO = "2026-06-12T18:00:00-05:00" // Viernes 12 Junio 2026, 6:00 PM (Colombia)
-const EVENT_LOCATION = "Hacienda La Esperanza"
+const EVENT_DATE_ISO = "2026-06-14T20:00:00-05:00" // Domingo 14 Junio 2026, 8:00 PM (Colombia)
+const EVENT_LOCATION = "Discoteca 8cero4, en cuatro esquinas"
 const WHATSAPP_PHONE = "573015181018" // +57 301 518 1018
+const MAIN_PHOTO_SRC = "https://images.pixieset.com/250051611/5ea0fca41f077e864b8ce03b7759fd59-xxlarge.jpg"
 
 // URL de la carpeta donde los invitados subirán las fotos.
 // Reemplázala por tu enlace real (Google Drive, Google Photos, Dropbox, etc.)
@@ -72,7 +73,7 @@ export default function InvitationPage() {
 
             <div className="relative aspect-[3/4] overflow-hidden rounded-[1.4rem] shadow-xl shadow-primary/20">
               <Image
-                src="https://cdn.mechitacollection.com/wp-content/uploads/2024/06/11162528/vestido-de-15-anos-lila-1.jpg"
+                src={MAIN_PHOTO_SRC}
                 alt="Vestido de XV años color lila"
                 fill
                 priority
@@ -87,7 +88,7 @@ export default function InvitationPage() {
           </div>
 
           <p className="mt-10 font-display text-2xl sm:text-3xl text-foreground tracking-wide">
-            Viernes <span className="text-primary">·</span> 12 de Junio
+            Domingo <span className="text-primary">·</span> 14 de Junio
           </p>
         </div>
       </section>
@@ -166,7 +167,7 @@ export default function InvitationPage() {
             Cuenta regresiva para mi gran noche
           </h2>
           <p className="mt-3 font-serif italic text-muted-foreground">
-            Viernes 12 de Junio · 6:00 PM
+            Domingo 14 de Junio · 8:00 PM
           </p>
 
           <div className="mt-10">
@@ -194,8 +195,8 @@ export default function InvitationPage() {
           <div className="grid gap-5 sm:grid-cols-3">
             <DetailCard
               label="Fecha"
-              title="12 de Junio"
-              subtitle="Viernes · 2026"
+              title="14 de Junio"
+              subtitle="Domingo · 2026"
               icon={
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-7 w-7">
                   <rect x="3" y="5" width="18" height="16" rx="2" />
@@ -206,8 +207,8 @@ export default function InvitationPage() {
             />
             <DetailCard
               label="Hora"
-              title="6:00 PM"
-              subtitle="Recepción a las 5:30 PM"
+              title="8:00 PM"
+              subtitle="Recepción a las 7:30 PM"
               icon={
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-7 w-7">
                   <circle cx="12" cy="12" r="9" />
@@ -453,7 +454,7 @@ export default function InvitationPage() {
         <p className="mt-4 font-display tracking-[0.4em] text-sm uppercase text-muted-foreground">
           {HOST_NAME} · XV Años
         </p>
-        <p className="mt-2 font-serif italic text-sm text-muted-foreground/80">12 · 06 · 2026</p>
+        <p className="mt-2 font-serif italic text-sm text-muted-foreground/80">14 · 06 · 2026</p>
       </footer>
       </main>
     </IntroGate>
