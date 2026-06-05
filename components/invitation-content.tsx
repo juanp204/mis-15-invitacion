@@ -208,10 +208,10 @@ export function InvitationContent({ guest }: Props) {
 
       {/* ===================== DETALLES ===================== */}
       <section className="relative overflow-hidden px-6 py-16 sm:py-24">
-        <LilacCorner position="tl" className="h-32 w-32 sm:h-40 sm:w-40 opacity-85" />
-        <LilacCorner position="tr" className="h-32 w-32 sm:h-40 sm:w-40 opacity-85" />
-        <LilacCorner position="bl" className="h-28 w-28 sm:h-36 sm:w-36 opacity-75" />
-        <LilacCorner position="br" className="h-28 w-28 sm:h-36 sm:w-36 opacity-75" />
+        <LilacCorner position="tl" className="h-24 w-24 sm:h-32 sm:w-32 opacity-85" />
+        <LilacCorner position="tr" className="h-24 w-24 sm:h-32 sm:w-32 opacity-85" />
+        <LilacCorner position="bl" className="h-22 w-22 sm:h-28 sm:w-28 opacity-75" />
+        <LilacCorner position="br" className="h-22 w-22 sm:h-28 sm:w-28 opacity-75" />
 
         <Butterfly className="pointer-events-none absolute right-[8%] top-[20%] h-7 w-9 animate-butterfly opacity-70 sm:h-9 sm:w-11" />
 
@@ -265,10 +265,10 @@ export function InvitationContent({ guest }: Props) {
       <section className="relative overflow-hidden px-6 py-16 sm:py-24 bg-secondary/30">
         <FallingPetals count={5} />
 
-        <LilacCorner position="tl" className="h-36 w-36 sm:h-44 sm:w-44" />
-        <LilacCorner position="tr" className="h-36 w-36 sm:h-44 sm:w-44" />
-        <LilacCorner position="bl" className="h-32 w-32 sm:h-40 sm:w-40 opacity-90" />
-        <LilacCorner position="br" className="h-32 w-32 sm:h-40 sm:w-40 opacity-90" />
+        <LilacCorner position="tl" className="h-24 w-24 sm:h-32 sm:w-32" />
+        <LilacCorner position="tr" className="h-24 w-24 sm:h-32 sm:w-32" />
+        <LilacCorner position="bl" className="h-22 w-22 sm:h-28 sm:w-28 opacity-90" />
+        <LilacCorner position="br" className="h-22 w-22 sm:h-28 sm:w-28 opacity-90" />
 
         <div className="relative mx-auto max-w-2xl text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-primary/80">Código de Vestimenta</p>
