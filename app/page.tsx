@@ -292,7 +292,7 @@ export default function InvitationPage() {
           </p>
 
           <p className="mt-4 font-serif italic text-sm text-muted-foreground">
-            Vestimenta formal · Etiqueta elegante
+            Vestimenta formal
           </p>
         </div>
       </section>
