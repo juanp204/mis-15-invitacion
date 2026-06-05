@@ -33,8 +33,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://images.pixieset.com/250051611/5ea0fca41f077e864b8ce03b7759fd59-small.jpg",
-        width: 1200,
-        height: 630,
         alt: "Invitación de XV Años de Melany",
       },
     ],
