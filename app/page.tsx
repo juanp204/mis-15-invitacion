@@ -15,7 +15,7 @@ const HOST_NAME = "Melany"
 const EVENT_DATE_ISO = "2026-06-14T20:00:00-05:00" // Domingo 14 Junio 2026, 8:00 PM (Colombia)
 const EVENT_LOCATION = "Discoteca 8cero4, en cuatro esquinas"
 const WHATSAPP_PHONE = "573015181018" // +57 301 518 1018
-const MAIN_PHOTO_SRC = "/hero-optimized.webp"
+const MAIN_PHOTO_SRC = "https://juanp204.github.io/mis-15-invitacion/hero-optimized.webp"
 
 // URL de la carpeta donde los invitados subirán las fotos.
 // Reemplázala por tu enlace real (Google Drive, Google Photos, Dropbox, etc.)
