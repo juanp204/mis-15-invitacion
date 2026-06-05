@@ -126,7 +126,7 @@ export function IntroGate({ children }: { children: React.ReactNode }) {
                     </p>
                     <div className="mx-auto my-2 h-px w-10 bg-primary/35" />
                     <p className="font-display text-[0.48rem] tracking-[0.35em] uppercase text-foreground/65 sm:text-[0.58rem]">
-                      12 · Junio · 2026
+                      14 · Junio · 2026
                     </p>
                   </div>
                 </div>
