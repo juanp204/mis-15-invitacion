@@ -26,7 +26,7 @@ export function WhatsappConfirm({ phone, hostName, guest }: Props) {
     ? buildPersonalizedMessage(guest, guest.slots > 1 ? count : undefined)
     : buildGenericMessage(name.trim() || "un invitado especial", hostName)
 
-  const href = `https://api.whatsapp.com/send/?phone=${phone}&text=${encodeURIComponent(message)}`
+  const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
 
   return (
     <div className="w-full max-w-md mx-auto flex flex-col gap-4">
