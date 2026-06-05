@@ -16,16 +16,10 @@ async function optimize() {
       .toFile(webOutputPath);
     console.log(`Created web hero: public/hero-optimized.webp (${(info1.size / 1024).toFixed(2)} KB)`);
 
-    // 2. OpenGraph / WhatsApp Preview: JPEG format, 1200x630 (landscape), quality 70
-    // JPEG is 100% compatible with all mobile messaging clients.
+    // 2. OpenGraph / WhatsApp Preview: JPEG format, width 1000px (preserves aspect ratio, no crop), quality 60
     const info2 = await sharp(inputPath)
-      .resize({
-        width: 1200,
-        height: 630,
-        fit: 'cover',
-        position: 'entropy'
-      })
-      .jpeg({ quality: 70, progressive: true })
+      .resize({ width: 1000 })
+      .jpeg({ quality: 60, progressive: true })
       .toFile(ogOutputPath);
     console.log(`Created openGraph preview: public/og-preview.jpg (${(info2.size / 1024).toFixed(2)} KB)`);
 
