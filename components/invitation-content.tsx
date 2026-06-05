@@ -21,7 +21,7 @@ const MAIN_PHOTO_SRC = "/hero-optimized.webp"
 
 // URL de la carpeta donde los invitados subirán las fotos.
 // Reemplázala por tu enlace real (Google Drive, Google Photos, Dropbox, etc.)
-const PHOTO_FOLDER_URL = "https://drive.google.com/drive/folders/melany-xv-fotos"
+const PHOTO_FOLDER_URL = "https://photos.app.goo.gl/WNkq2bs2K4JbYF4o6"
 const PHOTO_QR_SRC = `https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=10&color=4A2A6B&bgcolor=FBF7FB&data=${encodeURIComponent(
   PHOTO_FOLDER_URL,
 )}`
