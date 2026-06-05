@@ -2,44 +2,106 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import type { GuestType } from "@/lib/guests"
+
+type GuestInfo = {
+  name: string
+  slots: number
+  type: GuestType
+}
 
 type Props = {
   phone: string // sin +, ni espacios
   hostName: string
+  /** When provided, the name input is hidden and the message is personalized */
+  guest?: GuestInfo
 }
 
-export function WhatsappConfirm({ phone, hostName }: Props) {
+export function WhatsappConfirm({ phone, hostName, guest }: Props) {
   const [name, setName] = useState("")
+  const [count, setCount] = useState(guest?.slots ?? 1)
 
-  const buildMessage = (guestName: string) => {
-    const clean = guestName.trim() || "un invitado especial"
-    return (
-      `Hola ${hostName}! 💌 Soy ${clean}. ` +
-      `Con muchísima alegría confirmo mi asistencia a tu fiesta de XV Años. ` +
-      `Gracias por incluirme en una noche tan especial — ¡no me la pierdo por nada del mundo! 🥂✨`
-    )
-  }
+  // ── Build the WhatsApp message ────────────────────────────────────
+  const message = guest
+    ? buildPersonalizedMessage(guest, guest.slots > 1 ? count : undefined)
+    : buildGenericMessage(name.trim() || "un invitado especial", hostName)
 
-  const href = `https://wa.me/${phone}?text=${encodeURIComponent(buildMessage(name))}`
+  const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
 
   return (
     <div className="w-full max-w-md mx-auto flex flex-col gap-4">
-      <div className="flex flex-col gap-2 text-left">
-        <label
-          htmlFor="guest-name"
-          className="text-xs uppercase tracking-[0.25em] text-muted-foreground"
-        >
-          Tu nombre
-        </label>
-        <input
-          id="guest-name"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Escribe tu nombre completo"
-          className="h-12 rounded-md border border-primary/30 bg-card/80 px-4 font-serif text-base text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
-        />
-      </div>
+      {guest ? (
+        /* ── Personalized: no name input ─────────────────────────── */
+        <>
+          {/* Show guest name as a badge */}
+          <div className="text-center">
+            <p className="font-script text-3xl sm:text-4xl text-primary leading-tight">
+              {guest.name}
+            </p>
+          </div>
+
+          {/* Cupos stepper for families/groups */}
+          {guest.slots > 1 && (
+            <div className="flex flex-col items-center gap-3 rounded-xl border border-primary/20 bg-card/70 px-6 py-5">
+              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                ¿Cuántos asistirán?
+              </p>
+
+              <div className="flex items-center gap-4">
+                <button
+                  type="button"
+                  onClick={() => setCount((c) => Math.max(1, c - 1))}
+                  disabled={count <= 1}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/30 bg-secondary/50 text-primary transition-colors hover:bg-secondary disabled:opacity-40 disabled:cursor-not-allowed"
+                  aria-label="Reducir"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+                    <path d="M5 12h14" />
+                  </svg>
+                </button>
+
+                <span className="min-w-[3rem] text-center font-display text-3xl text-foreground">
+                  {count}
+                </span>
+
+                <button
+                  type="button"
+                  onClick={() => setCount((c) => Math.min(guest.slots, c + 1))}
+                  disabled={count >= guest.slots}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/30 bg-secondary/50 text-primary transition-colors hover:bg-secondary disabled:opacity-40 disabled:cursor-not-allowed"
+                  aria-label="Aumentar"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </button>
+              </div>
+
+              <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground/80">
+                de {guest.slots} cupos reservados
+              </p>
+            </div>
+          )}
+        </>
+      ) : (
+        /* ── Generic: show name input ────────────────────────────── */
+        <div className="flex flex-col gap-2 text-left">
+          <label
+            htmlFor="guest-name"
+            className="text-xs uppercase tracking-[0.25em] text-muted-foreground"
+          >
+            Tu nombre
+          </label>
+          <input
+            id="guest-name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Escribe tu nombre completo"
+            className="h-12 rounded-md border border-primary/30 bg-card/80 px-4 font-serif text-base text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
+          />
+        </div>
+      )}
 
       <Button
         asChild
@@ -69,5 +131,48 @@ export function WhatsappConfirm({ phone, hostName }: Props) {
         Al tocar el botón se abrirá WhatsApp con un mensaje listo para enviar a {hostName}.
       </p>
     </div>
+  )
+}
+
+// ── Generic message (no guest identified) ─────────────────────────────
+function buildGenericMessage(guestName: string, hostName: string): string {
+  return (
+    `Hola ${hostName}! 💌 Soy ${guestName}. ` +
+    `Con muchísima alegría confirmo mi asistencia a tu fiesta de XV Años. ` +
+    `Gracias por incluirme en una noche tan especial — ¡no me la pierdo por nada del mundo! 🥂✨`
+  )
+}
+
+// ── Personalized message (guest identified by URL) ────────────────────
+function buildPersonalizedMessage(guest: GuestInfo, count?: number): string {
+  const isPlural = guest.type === "family" || guest.type === "brothers" || guest.type === "sisters"
+
+  if (!isPlural) {
+    const emoji = guest.type === "f" ? "💃" : "🕺"
+    const pronoun = guest.type === "f" ? "la" : "lo"
+    return (
+      `¡Hola Melany! 💌✨\n\n` +
+      `Soy *${guest.name}* y con muchísima alegría confirmo mi asistencia a tu fiesta de XV Años.\n\n` +
+      `¡Cuenta conmigo, no me ${pronoun} pierdo por nada del mundo! 🥂${emoji}`
+    )
+  }
+
+  const article =
+    guest.type === "family" ? "la" : guest.type === "brothers" ? "los" : "las"
+  const closing =
+    guest.type === "sisters"
+      ? "¡Cuenta con nosotras, no nos lo perdemos por nada del mundo!"
+      : "¡Cuenta con nosotros, no nos lo perdemos por nada del mundo!"
+
+  const countLine =
+    count != null
+      ? `Asistiremos *${count}* de ${guest.slots} personas.\n\n`
+      : `Asistiremos *${guest.slots}* personas.\n\n`
+
+  return (
+    `¡Hola Melany! 💌✨\n\n` +
+    `Somos ${article} *${guest.name}* y con muchísima alegría confirmamos nuestra asistencia a tu fiesta de XV Años.\n` +
+    countLine +
+    `${closing} 🥂✨`
   )
 }

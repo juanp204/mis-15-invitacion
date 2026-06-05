@@ -4,7 +4,17 @@ import { useEffect, useRef, useState } from "react"
 
 type Stage = "sealed" | "opening" | "letter-up" | "expanding" | "done"
 
-export function IntroGate({ children }: { children: React.ReactNode }) {
+type IntroGateProps = {
+  children: React.ReactNode
+  /** Guest name to display in the intro, e.g. "Melba Pertuz" */
+  guestName?: string
+  /** "tienes" or "tienen" */
+  introVerb?: string
+  /** "Estás invitada a" / "Estás invitado a" / "Están invitados a" */
+  inviteLabel?: string
+}
+
+export function IntroGate({ children, guestName, introVerb, inviteLabel }: IntroGateProps) {
   const [stage, setStage] = useState<Stage>("sealed")
   const [flapBehind, setFlapBehind] = useState(false)
   const overlayRef = useRef<HTMLDivElement>(null)
@@ -90,8 +100,11 @@ export function IntroGate({ children }: { children: React.ReactNode }) {
           <div className="relative flex flex-col items-center px-6">
 
             {/* Pre-title text */}
-            <p className={`mb-3 font-display text-[0.62rem] tracking-[0.55em] uppercase text-white/85 sm:text-[0.72rem] transition-opacity duration-500 ${stage === "sealed" ? "opacity-100" : "opacity-0"}`}>
-              Tienes una invitación especial
+            <p className={`mb-3 font-display text-[0.62rem] tracking-[0.55em] uppercase text-white/85 sm:text-[0.72rem] transition-opacity duration-500 text-balance ${stage === "sealed" ? "opacity-100" : "opacity-0"}`}>
+              {guestName
+                ? <>{guestName}, {introVerb || "tienes"} una invitación especial</>
+                : "Tienes una invitación especial"
+              }
             </p>
 
             {/* Name in script */}
@@ -119,7 +132,7 @@ export function IntroGate({ children }: { children: React.ReactNode }) {
                 <div className={`envelope-letter ${isLetterUp ? "letter-revealed" : ""}`}>
                   <div className="text-center">
                     <p className="font-display text-[0.48rem] tracking-[0.5em] uppercase text-primary/75 sm:text-[0.58rem]">
-                      Estás invitada a
+                      {inviteLabel || "Estás invitada a"}
                     </p>
                     <p className="mt-1.5 font-script text-[2.2rem] leading-none text-primary sm:text-[2.7rem]">
                       Mis XV
