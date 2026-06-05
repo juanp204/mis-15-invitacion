@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       "Te invito a celebrar conmigo una noche inolvidable. Mis XV Años — Domingo 14 de Junio, Discoteca 8cero4.",
     images: [
       {
-        url: "https://images.pixieset.com/250051611/5ea0fca41f077e864b8ce03b7759fd59-xxlarge.jpg",
+        url: "https://images.pixieset.com/250051611/5ea0fca41f077e864b8ce03b7759fd59-small.jpg",
         width: 1200,
         height: 630,
         alt: "Invitación de XV Años de Melany",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Mis XV Años — Melany",
     description:
       "Te invito a celebrar conmigo una noche inolvidable. Mis XV Años — Domingo 14 de Junio, Discoteca 8cero4.",
-    images: ["https://images.pixieset.com/250051611/5ea0fca41f077e864b8ce03b7759fd59-xxlarge.jpg"],
+    images: ["https://images.pixieset.com/250051611/5ea0fca41f077e864b8ce03b7759fd59-small.jpg"],
   },
 }
 
