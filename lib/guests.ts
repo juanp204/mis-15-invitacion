@@ -143,6 +143,7 @@ export const GUESTS: Guest[] = [
   { name: "Marcos Roa", slug: "marcos-roa", slots: 1, type: "m" },
   { name: "Johan Muñoz", slug: "johan-munoz", slots: 1, type: "m" },
   { name: "Habit Barrios", slug: "habit-barrios", slots: 1, type: "m" },
+  { name: "Yeshua Herazo", slug: "yeshua-herazo", slots: 1, type: "m" },
 ]
 
 // ── Lookup ────────────────────────────────────────────────────────────
